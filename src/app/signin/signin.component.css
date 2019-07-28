@@ -1,0 +1,19 @@
+form {
+    width: 300px;
+    margin: 60px auto;
+    padding: 20px;
+    border: 1px solid #cccccc;
+}
+form label {
+    display: block;
+    margin-bottom: 15px;
+}
+form label span {
+    display: block;
+}
+form label input {
+    width: 100%;
+}
+form .btn {
+    width: 100%;
+}
