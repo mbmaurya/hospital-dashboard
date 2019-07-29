@@ -1,3 +1,17 @@
-<p>
-  signup works!
-</p>
+
+<form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+  <h3>Welcome</h3>
+  <p>Let's get started</p>
+
+  <div>
+    <input placeholder="Enter your email" [formControl]="email" required>
+    <!-- <span class="error" *ngIf="!email.valid">Not a valid email</span> -->
+  </div>
+
+  <div>
+    <input placeholder="Enter your password" [formControl]="password" type="password" required>
+    <!-- <span class="error" *ngIf="!password.valid">Not a valid password</span> -->
+  </div>
+
+  <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>

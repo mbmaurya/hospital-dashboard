@@ -1,15 +1,29 @@
 
+<form [formGroup]="signInForm" (ngSubmit)="signIn()">
+  <h3>Welcome</h3>
+  <p>Login to your account</p>
 
-  <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
-    <label>
-      <span>Email:</span>
-      <input type="email" formControlName="email" required>
-    </label>
+  <div>
+    <input placeholder="Enter your email" [formControl]="email" required>
+    <!-- <span class="error" *ngIf="!email.valid">Not a valid email</span> -->
+  </div>
 
-    <label>
-      <span>Password:</span>
-      <input type="password" formControlName="password" required>
-    </label>
-    <input type="submit" [disabled]="!signinForm.valid" class="btn btn-primary" value="Submit" />
-  </form>
+  <div>
+    <input placeholder="Enter your password" [formControl]="password" type="password" required>
+    <!-- <span class="error" *ngIf="!password.valid">Not a valid password</span> -->
+  </div>
 
+  <section>
+    <div class="signup">
+      <a routerLink="/signup">Sign Up</a>
+    </div>
+
+    <div class="reset-password">
+      <a routerLink="/reset-password">Forgot password?</a>
+    </div>
+  </section>
+
+  
+
+  <button type="submit" class="btn btn-primary">Sign In</button>
+</form>
