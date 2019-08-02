@@ -7,12 +7,14 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment} from '../environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { AppComponent } from './app.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { RemovewhitespacePipe } from './removewhitespace.pipe';
 
 const appRoutes: Routes = [
   { path: 'signin', component: SigninComponent },
@@ -31,11 +33,13 @@ const appRoutes: Routes = [
     SigninComponent,
     SignupComponent,
     DashboardComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    RemovewhitespacePipe
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
